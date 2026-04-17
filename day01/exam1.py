@@ -32,3 +32,16 @@ print("안녕하세요"[2])
 print("안녕하세요"[3])
 print("안녕하세요"[4])
 print("안녕하세요"[5])
+
+# p.186
+str_input=input("태어난 해> ")
+birth_year=int(str_input)%12
+print(birth_year)
+
+x=10
+y=2
+if x>4:
+    if y>2:
+        print(x*y)
+else:
+    print(x+y)
