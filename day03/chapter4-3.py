@@ -75,3 +75,39 @@ for number in numbers: # 반복문
     if number<10:      # 조건문
         continue       # 반복 변수가 10보다 작으면 다음으로 이동 
     print(number)
+
+
+# p248
+# [2]
+key_list=["name","hp", "mp", "level"]
+value_list=["기사", 200, 30, 5]
+character={}
+for i in range(0, len(key_list)):
+    key=key_list[i]
+    value=value_list[i]
+    character[key]=value
+print(character)
+
+limit=10000
+i=1
+
+# [3]
+sum_value=0
+while True:
+    sum_value+=1 # 누적 합계
+    if(sum_value>limit): # 누적 합계가 10000보다 커지면
+        break # 반복문 탈출
+    i+=1 # 1씩 증가
+    print(i, sum_value)
+
+# [4]
+max_value=0
+a=0
+b=0
+for i in range(1, 51): # 1부터 50까지 1씩 증가 반복
+    j=100-i #
+    if max_value<i*j:
+        max_value=i*j
+        a=j
+        b=i
+        print(a,b,max_value)
