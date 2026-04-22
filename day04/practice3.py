@@ -36,7 +36,6 @@ score.sort(reverse=True)
 number=input("숫자 입력> ")
 print(int(number) in score)
 
-
 # 문제 6: 딕셔너리 기본 선언 및 호출 다음 정보를 담은 딕셔너리 movie를 선언하고, .get() 메서드를 사용하여 영화의 "감독"을 출력하시오.
 # 제목: 파묘
 # 감독: 장재현
