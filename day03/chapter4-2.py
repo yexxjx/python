@@ -29,7 +29,6 @@ print(dict_a) # {'name': '어벤저스 엔드게임', 'type': '히어로 무비'
 for 키 in dict_a:
     print(키, ':', dict_a[키])
 
-
 # p227-229
 pets=[
     {"name":"구름", "age":5},

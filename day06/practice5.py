@@ -14,9 +14,14 @@ print(is_adult(input_age))
 # 문제 2: 인사말 출력 함수 (say_hello)
 # 이름(name)과 인사말(message) 두 개의 매개변수를 받는 함수를 작성하시오. 이때 message는 기본 매개변수로 설정하여 값이 입력되지 않으면 "안녕하세요"가 출력되도록 하시오.
 # 호출 예시: say_hello("홍길동") -> 결과: 홍길동님, 안녕하세요.
-def say_hello(name, message="안녕하세요"):
-    return f"{name}님,{message}."
-print(say_hello("홍길동"))
+def say_hello(name, message):
+    if(message==""):
+        return f"{name}님, 안녕하세요."
+    else:
+        return f"{name}님,{message}."
+name=input("이름 입력> ")
+message=input("메세지 입력> ")
+print(say_hello(name, message))
 
 # 문제 3: 삼각형의 넓이 계산 (get_triangle_area)
 # 밑변(width)과 높이(height)를 매개변수로 받아 삼각형의 넓이를 반환하는 함수를 작성하시오.
@@ -48,13 +53,29 @@ print(sum_all(input_sum))
 # 문제 6: 가장 긴 단어 찾기 (find_longest)
 # 여러 개의 단어를 전개 매개변수로 입력받아 그중 가장 길이가 긴 단어를 반환하는 함수를 작성하시오.
 # 호출 예시: find_longest("apple", "strawberry", "kiwi") -> 결과: strawberry
+def find_longest(word):
+    word=words.split()
+    longest=max(word, key=len)
+    return (f"{longest}")
+words=input("단어 입력> ")
+print(find_longest(words))
 
 # 문제 7: 최고 점수 학생 찾기 (get_top_student)
 # 학생 정보(이름, 점수)가 담긴 딕셔너리들이 포함된 리스트를 매개변수로 받아 가장 높은 점수를 받은 학생의 이름을 반환하는 함수를 작성하시오.
 # 데이터: [{'name': 'A', 'score': 80}, {'name': 'B', 'score': 95}]
+# data=[{'name': 'A', 'score': 80}, {'name': 'B', 'score': 95}]
+# def get_top_student(data):
 
 # 문제 8: 리스트 요소 합계 (sum_list)
 # 숫자로 이루어진 리스트 하나를 매개변수로 받아 for문을 사용하여 모든 요소의 합계를 구한 뒤 반환하는 함수를 작성하시오.
+numbers=[1,2,3,4,5,6]
+total=0
+def sum_list(numbers):
+    for number in numbers:
+        if number!="":
+            total+=number
+        print(number)
+print(sum_list(numbers))
 
 # 문제 9: 전역 변수 점수 관리
 # 전역 변수 current_score = 0을 선언하고, 점수를 추가하는 add_score(n) 함수와 감점하는 sub_score(n) 함수를 작성하시오. (함수 내에서 global 키워드를 사용하여 전역 변수 값을 수정하시오.)
