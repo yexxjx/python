@@ -34,3 +34,12 @@ print(a,b)
 # 함수 리턴 값
 def test():
     return 10,20 # (10,20), [10,20], {'a': 10, 'b': 20}
+
+# p352
+numbers=[1,2,3,4,5,6]
+print("::".join(map(str,numbers)))
+
+numbers=list(range(1, 10+1))
+print(list(filter(lambda number: number%2==1, numbers)))
+print(list(filter(lambda number: 3<=number<7, numbers)))
+print(list(filter(lambda number: number**2<50,numbers)))

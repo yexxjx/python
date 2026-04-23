@@ -73,8 +73,21 @@ for i, value in enumerate(sales):
 # 출력 예시: 210어7125: 65분 주차, 최종 요금: 2500원
 car_numbers = ["210어7125", "142가7415", "888호8888", "931나8234"]
 usage_minutes = [65, 30, 140, 420]
+list={}
+for i in range(len(car_numbers)):
+     car=car_numbers[i]
+     usage=usage_minutes[i]
+     money=1000
+     if usage<=30:
+         pass
+     elif usage>30:
+          money+=((usage-30)//10)*500
+          if money>20000:
+               money=20000
+     print("{}: {}분 주차, 최종 요금: {}원".format(car, usage, money))
+     list[car]=usage
+print(list)
 
- 
 # 문제 10: 간단한 ATM 기기 구현 while True 무한 루프를 사용하여 간단한 ATM 기능을 구현하시오.
 # 요구 조건:
 # 사용자에게 "1:입금 | 2:출금 | 3:잔고 | 4:종료" 메뉴를 보여주고 입력을 받습니다.

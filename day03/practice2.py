@@ -22,9 +22,9 @@ print(letter)
 
 # 문제 4: 두 점수의 합격 판별
 # 두 개의 점수를 입력받아 총점이 120점 이상이고 각 점수가 모두 50점 이상이면 "합격", 아니면 "불합격"을 출력하시오.
-score1=input("점수1> ")
-score2=input("점수2> ")
-if int((score1+score2))>=120 and int(score1)>=50 and int(score2)>=50:
+score1=int(input("점수1> "))
+score2=int(input("점수2> "))
+if (score1+score2)>=120 and score1>=50 and score2>=50:
         print("합격")
 else: print("불합격")
 
