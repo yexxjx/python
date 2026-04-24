@@ -19,22 +19,37 @@
 #       - 금액 범위 검색: 사용자가 입력한 '최소 금액'과 '최대 금액' 사이의 거래 내역 필터링 출력
 #       - 전체 통계 조회: 전체 데이터의 평균 거래가 등 간단한 통계 정보 출력
 
-file=open("/day08/users.txt", "w")
-file.write([
-    {"uno":"1", "uid":"uid1", "upwd":"upwd1", "uname":"uname1"},
-    {"uno":"2", "uid":"uid2", "upwd":"upwd2", "uname":"uname2"},
-    {"uno":"3", "uid":"uid3", "upwd":"upwd3", "uname":"uname3"},
-    {"uno":"4", "uid":"uid4", "upwd":"upwd4", "uname":"uname4"},
-    {"uno":"5", "uid":"uid5", "upwd":"upwd5", "uname":"uname5"}
-    ])
+import json
+data=[{"uno":"1", "uid":"U001", "upwd":"0001", "uname":"user01"},
+        {"uno":"2", "uid":"U002", "upwd":"0002", "uname":"user02"},
+        {"uno":"3", "uid":"U003", "upwd":"0003", "uname":"user03"},
+        {"uno":"4", "uid":"U004", "upwd":"0004", "uname":"user04"},
+        {"uno":"5", "uid":"U005", "upwd":"0005", "uname":"user05"}]
+file_path="./day08/users.txt"
+with open(file_path, "w") as file:
+    json.dump(data, file, indent=4)
+
+import csv
+with open(r"C:\Users\sku-102-05\Desktop\새 폴더\python\day08\아파트(매매)_실거래가_20260424151649.csv", "r", encoding='UTF-8') as file:
+    csv_reader=csv.reader(file)
+    for row in csv_reader:
+        print(row)
+
+def login():
+    users={}
+    with open("./day08/users.txt", "r") as file:
+        for line in file:
+            uid, upwd=line.strip().split(":")
+            users[uid]=upwd
+
+    id_input=input("아이디 입력> ")
+    pwd_input=input("비밀번호 입력> ")
+
+    if id_input in data and data[id_input]==pwd_input:
+        print("로그인 성공")
+    else:
+        print("로그인 실패")
+print(login())
 
 
-# 엑셀 형태의 데이터를 다루는 법을 배웁니다.
 
-# 데이터의 형태: CSV 파일은 콤마(,)로 구분된 텍스트 파일입니다.
-
-# 작업 순서: 1.  파일을 한 줄씩 읽습니다.
-# 2.  split(',') 함수를 써서 콤마를 기준으로 데이터를 쪼갭니다.
-# 3.  쪼개진 데이터를 리스트에 넣거나, '아파트이름': '가격' 형태의 딕셔너리로 만듭니다.
-
-# 주의점: 숫자 데이터(가격, 면적)는 파일에서 읽어오면 '문자열' 상태입니다. 계산을 하려면 int()나 float()로 바꿔주는 작업이 필요하겠죠?
