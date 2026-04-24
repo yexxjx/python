@@ -65,8 +65,8 @@ print(find_longest(words))
 # 데이터: [{'name': 'A', 'score': 80}, {'name': 'B', 'score': 95}]
 data=[{'name': 'A', 'score': 80}, {'name': 'B', 'score': 95}]
 def get_top_student(data):
-    top_person=max(data, key=lambda x:x['score'])
-    return top_person['name']
+    top_student=max(data, key=lambda x:x['score'])
+    return top_student['name']
 print(get_top_student(data))
 
 # 문제 8: 리스트 요소 합계 (sum_list)
