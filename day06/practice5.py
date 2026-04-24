@@ -63,19 +63,21 @@ print(find_longest(words))
 # 문제 7: 최고 점수 학생 찾기 (get_top_student)
 # 학생 정보(이름, 점수)가 담긴 딕셔너리들이 포함된 리스트를 매개변수로 받아 가장 높은 점수를 받은 학생의 이름을 반환하는 함수를 작성하시오.
 # 데이터: [{'name': 'A', 'score': 80}, {'name': 'B', 'score': 95}]
-# data=[{'name': 'A', 'score': 80}, {'name': 'B', 'score': 95}]
-# def get_top_student(data):
+data=[{'name': 'A', 'score': 80}, {'name': 'B', 'score': 95}]
+def get_top_student(data):
+    top_person=max(data, key=lambda x:x['score'])
+    return top_person['name']
+print(get_top_student(data))
 
 # 문제 8: 리스트 요소 합계 (sum_list)
 # 숫자로 이루어진 리스트 하나를 매개변수로 받아 for문을 사용하여 모든 요소의 합계를 구한 뒤 반환하는 함수를 작성하시오.
-numbers=[1,2,3,4,5,6]
-total=0
 def sum_list(numbers):
+    total=0
     for number in numbers:
-        if number!="":
-            total+=number
-        print(number)
-print(sum_list(numbers))
+        total+=number
+    return total
+number_list=[1,2,3,4,5,6]
+print(sum_list(number_list))
 
 # 문제 9: 전역 변수 점수 관리
 # 전역 변수 current_score = 0을 선언하고, 점수를 추가하는 add_score(n) 함수와 감점하는 sub_score(n) 함수를 작성하시오. (함수 내에서 global 키워드를 사용하여 전역 변수 값을 수정하시오.)
