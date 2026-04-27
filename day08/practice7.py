@@ -45,7 +45,7 @@ def login():
     id_input=input("아이디 입력> ")
     pwd_input=input("비밀번호 입력> ")
 
-    if id_input in data and data[id_input]==pwd_input:
+    if id_input in users and users[id_input]==pwd_input:
         print("로그인 성공")
     else:
         print("로그인 실패")
