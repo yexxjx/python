@@ -78,7 +78,6 @@ axs[1].set_title("막대그래프")
 plt.savefig("./day13/practice8_chart.png")
 plt.show()
 
-
 import seaborn as sns
 # 문제 6: 리스트 데이터를 이용한 히트맵(Heatmap) 생성
 # 5행 4열의 리스트 데이터 [[50, 60, 70, 80], [10, 20, 30, 40], [90, 80, 70, 60], [30, 40, 50, 60],[20, 10, 5, 0]]를
