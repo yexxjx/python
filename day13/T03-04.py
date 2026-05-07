@@ -65,7 +65,7 @@ plt.pie(sizes,labels=labels, colors=colors, explode=explode, startangle=90, auto
 plt.title("음식 선호도")
 plt.show()
 
-# [5] 선점도, 밀집도, .scatter(x측값, y측값, c(color)=)
+# [5] 산점도, 밀집도, .scatter(x측값, y측값, c(color)=)
 x=[1.5, 2.5, 3.5, 4.5, 5.5]
 y=[50,60,65,70,75]
 plt.scatter(x,y, color="red", s=100)
